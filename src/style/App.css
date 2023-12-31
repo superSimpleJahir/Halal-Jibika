@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.container{
+
+.container {
   max-width: 90%;
   margin: 0 auto;
 }
+
+body {
+  font-family: 'Zilla Slab', serif;
+}
+
 ul {
   list-style: none;
 }
@@ -15,12 +23,17 @@ a {
   text-decoration: none;
 }
 
-.flex{
+.mt {
+  margin-top: 62px;
+}
+
+.flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.grid{
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 }

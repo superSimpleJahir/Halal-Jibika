@@ -3,9 +3,11 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 const MainLayout = () => {
   return (
-    <div className='container'>
+    <div>
       <Header/>
+      <div className='mt'>
       <Outlet/>
+      </div>
       <Footer/>
     </div>
   );

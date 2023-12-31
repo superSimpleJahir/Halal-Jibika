@@ -1,8 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600;1,700&display=swap');
 
+.innerNavSection {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #FFF;
+  padding: 10px;
+  position: fixed;
+  top: 0;left: 0;
+  width: 100%;
+}
+
+
 .logo {
   font-family: 'Source Code Pro', monospace;
   color: #39A7FF;
   font-weight: 700;
   font-size: 30px;
+}
+
+.flex {
+  gap: 15px;
+}
+
+ul li a {
+  color: #39A7FF;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all ease .4s;
+}
+
+ul li a:hover {
+  color: #076cbe;
+}
+
+ul .btn {
+  padding: 5px 15px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+ul .login,
+ul .singup {
+  background-color: #39A7FF;
+  color: #fff;
+  transition: all ease .4s;
+}
+
+ul .login:hover,
+ul .singup:hover {
+  background-color: #076cbe;
+  opacity: 1;
 }
