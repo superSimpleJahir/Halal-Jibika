@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600;1,700&display=swap');
+
+.logo {
+  font-family: 'Source Code Pro', monospace;
+  color: #39A7FF;
+  font-weight: 700;
+  font-size: 30px;
+}

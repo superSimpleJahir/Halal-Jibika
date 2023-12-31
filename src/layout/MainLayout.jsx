@@ -3,7 +3,7 @@ import Footer from './Footer/Footer';
 import Header from './Header/Header';
 const MainLayout = () => {
   return (
-    <div>
+    <div className='container'>
       <Header/>
       <Outlet/>
       <Footer/>

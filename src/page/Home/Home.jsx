@@ -1,9 +1,11 @@
-
+import style from '../../style/Home.module.css'
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <header>
+      <section className={style}>
+        
+      </section>
+    </header>
   );
 };
 
