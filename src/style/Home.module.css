@@ -1,4 +1,53 @@
-/* @import url('../assets/Hero.jpg'); */
-.innerHeader{
 
+.bg {
+  background: linear-gradient(111deg, rgba(254, 254, 255, 0.94) 0%, rgba(166, 177, 214, 0.94) 97.81%);
 }
+.heroText{
+  width: 48%;
+}
+.heroText h1 {
+  color: #5c66d9;
+  font-size: 40px;
+}
+.heroText p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+.heroText .heroBtn{
+  background-color: #5c66d9;
+  padding: 10px 20px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 8px ;
+  cursor: pointer;
+  font-weight: bold;
+}
+.herologo{
+  width: 600px;
+}
+
+/* Add this CSS code to make your header responsive */
+@media only screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroText {
+    width: 100%;
+  }
+
+  .heroText h1 {
+    font-size: 30px;
+  }
+
+  .herologo {
+    order: 1;
+    width: 100%;
+  }
+}
+
+/* Rest of your existing CSS */
+

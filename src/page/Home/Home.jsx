@@ -1,19 +1,20 @@
+import { NavLink } from "react-router-dom";
 import style from "../../style/Home.module.css";
 const Home = () => {
   return (
-    <header className="container">
-      <section className={style.innerHeader}>
+    <header className={`${style.bg}`}>
+      <section className={`${style.innerHeader} container`}>
         <div className={`${style.hero} flex`}>
           <div className={style.heroText}>
-            <h1>Keep hardworking, take patients and make yourself always ready for jobs</h1>
+            <h1>Keep hardworking, <br /> take patients and make yourself <br /> always ready for jobs</h1>
             <p>
               We curate the best digital jobs for those who are looking to start their career in
               designing.
             </p>
-            <button>Exploer</button>
+            <NavLink to='/jobs' className={style.heroBtn}>Exploer</NavLink>
           </div>
           <div className={style.herologo}>
-            <img src="../../../public/img/image.png" alt="" />
+            <img src="../../../public/img/image .png" alt="" />
           </div>
         </div>
       </section>
