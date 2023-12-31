@@ -10,21 +10,31 @@ const Header = () => {
 
         <ul className={`${style.flex} flex`}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/jobs">Jobs</NavLink>
+            <NavLink to="/jobs" >
+              Jobs
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" >
+              Contact
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/favorite">Favorite</NavLink>
+            <NavLink to="/favorite" >
+              Favorite
+            </NavLink>
           </li>
-          <NavLink to="/login">
+          <NavLink to="/login" >
             <li className={`${style.login} ${style.btn}`}>Login</li>
           </NavLink>
         </ul>
@@ -41,3 +51,10 @@ const Header = () => {
 };
 
 export default Header;
+// className={({ isActive, isPending }) =>
+//                       isActive
+//                         ? "active"
+//                         : isPending
+//                         ? "pending"
+//                         : ""
+//                     }

@@ -1,8 +1,82 @@
-
+/* eslint-disable react/no-unescaped-entities */
+import { NavLink } from "react-router-dom";
+import style from "../../../style/Login.module.css";
+import { useState } from "react";
 const SingUp = () => {
+  const [userData, setUserData] = useState({ name: "", email: "", password: "", cpassword: "" });
+  const { name, email, password, cpassword } = userData;
+
+  const handelChang = (event) => {
+    setUserData({
+      ...userData,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handelSubmit = (event) => {
+    event.preventDefault();
+    console.log(userData);
+  };
   return (
     <div>
-      SingUp
+      <div className={`${style.innerLogin} container`}>
+        <form onSubmit={handelSubmit}>
+          <h1>SingUp</h1>
+          <p>
+            Already have an account? <NavLink to="/login">Login</NavLink>
+          </p>
+          <div className={`${style.name}`}>
+            <input
+              value={name}
+              onChange={handelChang}
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div className={`${style.name}`}>
+            <input
+              value={email}
+              onChange={handelChang}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div className={`${style.password}`}>
+            <input
+              onChange={handelChang}
+              value={password}
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className={`${style.password}`}>
+            <input
+              onChange={handelChang}
+              value={cpassword}
+              type="password"
+              name="cpassword"
+              id="cpassword"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className={`${style.btn}`}>
+            <input type="submit" value="Log In" required />
+          </div>
+          <div className={`${style.btn}`}>
+            <input type="button" value="Sign up with Google" required />
+          </div>
+          <div className={`${style.btn}`}>
+            <input type="button" value="Sign up with Github" required />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
