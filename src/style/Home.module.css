@@ -1,5 +1,5 @@
 .bg {
-  background: linear-gradient(111deg, rgba(254, 254, 255, 0.94) 0%, rgba(166, 177, 214, 0.94) 97.81%);
+  /* background: linear-gradient(111deg, rgba(254, 254, 255, 0.94) 0%, rgba(166, 177, 214, 0.94) 97.81%); */
 }
 
 .heroText {
@@ -9,8 +9,10 @@
 .heroText h1 {
   font-size: 40px;
 }
+
 .heroText h1 span {
   color: #5c66d9;
+  text-decoration: underline;
 }
 
 .heroText p {
@@ -33,15 +35,21 @@
 .herologo {
   width: 600px;
 }
-.innercategory{
+
+.innercategory {
   margin: 30px 0;
 }
-.innercategory h1{
+
+.innercategory h1 {
+  font-size: 35px;
   margin: 0 0 20px 0;
 }
-.innercategory h1 span{
+
+.innercategory h1 span {
   color: #5c66d9;
+  text-decoration: underline;
 }
+
 .categorySection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -60,6 +68,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: all ease .5s;
 }
+
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -68,6 +77,7 @@
 .card img {
   width: 40px;
 }
+
 .card h3 {
   margin: 10px 0;
 }
@@ -91,8 +101,9 @@
     order: 1;
     width: 100%;
   }
-  .categorySection{
-    grid-template-columns: repeat(2,1fr);
+
+  .categorySection {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

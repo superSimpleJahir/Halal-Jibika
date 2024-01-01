@@ -1,6 +1,14 @@
 .jobSection {
   margin: 40px auto;
 }
+.jobSection h1 {
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+.jobSection h1 span {
+color: #5c66d9;
+text-decoration: underline;
+}
 
 .innrejobs {
   display: grid;
