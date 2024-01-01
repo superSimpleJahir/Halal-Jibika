@@ -39,11 +39,19 @@
 .love {
   font-size: 20px;
   transition: all ease .5s;
+  
 }
 
-.love:hover {}
+.love:hover {
+  /* background-color: red; */
+  color: red;
+}
 
 .love1 {
+  font-size: 20px;
+  /* color: red; */
+}
+.love1:hover {
   font-size: 20px;
   color: red;
 }

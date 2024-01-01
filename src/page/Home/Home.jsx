@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import style from "../../style/Home.module.css";
 import { categoryData } from "../../utlity/categoryData";
 import JobCategories from "../../component/JobCategories";
+import Job from "../../component/Job";
 
 const Home = () => {
   return (
@@ -40,6 +41,10 @@ const Home = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      <section>
+        {/* <Job/> */}
       </section>
     </>
   );

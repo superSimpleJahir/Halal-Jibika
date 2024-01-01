@@ -1,21 +1,22 @@
 /* eslint-disable react/prop-types */
-import { FaRegHeart } from "react-icons/fa";
+// import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
-// import { FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import style from "../style/Jobs.module.css";
 
 const Job = ({ jobData }) => {
-  const { way, logo, title, salary, position, location } = jobData;
+  const {id, way, logo, title, salary, position, location } = jobData;
 
   return (
     <div className={style.innerJobcart}>
       <div className={style.jobCart}>
         <img className={style.companyLogo} src={logo} alt="" />
         <button className={style.loveBtn}>
-          <FaRegHeart className={style.love} />
-          {/* <FaHeart className={style.love1} /> */}
+          {/* <FaRegHeart className={style.love} /> */}
+          <FaHeart className={style.love1} />
         </button>
       </div>
 
@@ -35,7 +36,9 @@ const Job = ({ jobData }) => {
 
       <div className={style.buttons}>
         <button className={`${style.btn} ${style.apply}`}>Apply</button>
-        <button className={`${style.btn} ${style.details}`}>Details</button>
+        <Link to={`/jobdetails/${id}`} className={`${style.btn} ${style.details}`}>
+          Details
+        </Link>
       </div>
     </div>
   );

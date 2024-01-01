@@ -8,6 +8,7 @@ import Jobs from "../page/Jobs/Jobs";
 import SingUp from "../page/Auth/SingUp/SingUp";
 import Login from "../page/Auth/LogIn/Login";
 import Favorite from "../page/Favorite/Favorite";
+import JobDetails from "../component/JobDetails";
 
 const routes = createBrowserRouter([
   {
@@ -38,6 +39,12 @@ const routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />
+      },
+      {
+        path: "/jobdetails/:id",
+        element: <JobDetails/>,
+        loader: ()=>(fetch(`../../public/Jobs.json`)
+        )
       },
       // {
       //   path: "users/:userId",
