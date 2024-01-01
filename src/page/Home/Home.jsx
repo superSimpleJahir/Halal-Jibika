@@ -11,7 +11,7 @@ const Home = () => {
           <div className={`${style.hero} flex`}>
             <div className={style.heroText}>
               <h1>
-                Keep hardworking, <br /> take patients and make yourself <br /> always ready for
+                Keep <span>hardworking</span> <br /> take patients and make yourself <br /> always ready for
                 jobs
               </h1>
               <p>
@@ -19,7 +19,7 @@ const Home = () => {
                 designing.
               </p>
               <NavLink to="/jobs" className={style.heroBtn}>
-                Exploer
+                Explore
               </NavLink>
             </div>
             <div className={style.herologo}>
@@ -29,10 +29,17 @@ const Home = () => {
         </section>
       </header>
 
-      <section>
-        {categoryData.map((data) => (
-          <JobCategories key={data.id} data={data} />
-        ))}
+      <section className={`container`}>
+        <div className={style.innercategory}>
+          <h1>
+            Explore job by <span>Category</span>
+          </h1>
+          <div className={style.categorySection}>
+            {categoryData.map((data) => (
+              <JobCategories key={data.id} data={data} />
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

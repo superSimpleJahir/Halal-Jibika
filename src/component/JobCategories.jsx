@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-
+import style from '../style/Home.module.css'
 const JobCategories = ({ data }) => {
   const { title, image, jobNums } = data;
   return (
-    <div>
+    <div className={style.card}>
       <img src={image} alt="" />
-      <h2>{title}</h2>
-      <h4>{jobNums}</h4>
+      <h3>{title}</h3>
+      <h4>{jobNums} Jobs</h4>
     </div>
   );
 };

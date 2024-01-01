@@ -31,7 +31,7 @@ const SingUp = () => {
               type="text"
               name="name"
               id="name"
-              placeholder="Enter your email"
+              placeholder="Enter your name"
             />
           </div>
           <div className={`${style.name}`}>

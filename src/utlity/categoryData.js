@@ -1,50 +1,50 @@
 export const categoryData = [
   {
-    id:1,
+    id: 1,
     title: "Digital Marketing",
     jobNums: 82,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/voice-2.svg"
+    image: "../../public/img/voice-2.svg",
   },
   {
-    id:2,
+    id: 2,
     title: "UI/UX Design",
     jobNums: 354,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/edit-square.svg"
+    image: "../../public/img/uiux.svg",
   },
   {
-    id:3,
+    id: 3,
     title: "Content Writing",
     jobNums: 105,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/edit.svg"
+    image: "../../public/img/ContentWriting.svg",
   },
   {
-    id:4,
+    id: 4,
     title: "Development",
     jobNums: 105,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/activity.svg"
+    image: "../../public/img/Development.svg",
   },
   {
-    id:5,
+    id: 5,
     title: "Account & Finance    ",
     jobNums: 182,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/activity.svg"
+    image: "../../public/img/Development.svg",
   },
   {
-    id:6,
+    id: 6,
     title: "HR Managment    ",
     jobNums: 82,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/document.svg"
+    image: "../../public/img/HR Managment.svg",
   },
   {
-    id:7,
+    id: 7,
     title: "Videography    ",
     jobNums: 100,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/video.svg"
+    image: "../../public/img/Videography.svg",
   },
   {
-    id:8,
+    id: 8,
     title: "Call Center",
     jobNums: 157,
-    image: "https://html.creativegigstf.com/khuj/khuj/images/icon/calling.svg"
+    image: "../../public/img/CallCenter.svg",
   },
 ];
