@@ -12,7 +12,6 @@
   border-radius: 10px;
 }
 
-.innerLogin form {}
 
 .innerLogin form h1 {
   font-weight: 600;
@@ -48,4 +47,32 @@
 .innerLogin .btn input:hover {
   background-color: #076CBE;
   color: #fff;
+}
+
+.googleBtn,
+.gitBtn {
+  width: 100%;
+}
+
+.googleBtn button,
+.gitBtn button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #418fcf;
+  color: #fff;
+  font-size: 18px;
+  transition: all ease .5s;
+}
+.googleBtn button:hover {
+  background-color: #076CBE;
+}
+.gitBtn button:hover {
+  background-color: #076CBE;
+}
+
+.googleBtn button{
+  margin: 10px auto;
 }

@@ -3,17 +3,19 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 import style from "../../../style/Login.module.css";
-import { app } from "../../../firebase/firebase.config";
+import auth from "../../../firebase/firebase.config";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
   const { email, password } = inputValue;
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle ] = useSignInWithGoogle(auth);
+  const [signInWithGithub] = useSignInWithGithub(auth);
 
-  const emailPassword = getAuth(app);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handelChang = (event) => {
     setInputValue({
@@ -21,20 +23,23 @@ const Login = () => {
       [event.target.name]: event.target.value,
     });
   };
+
   const handelSubmit = (event) => {
     event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+    navigate("/");
+  };
 
-    // email and password auth
-    createUserWithEmailAndPassword(emailPassword, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        history("/");
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+  // Google auth
+  const handelLoginGoogle = () => {
+    signInWithGoogle();
+    navigate("/");
+  };
+
+  // Git auth
+  const handelLoginGithub = () => {
+    signInWithGithub()
+    navigate("/");
   };
 
   return (
@@ -71,13 +76,13 @@ const Login = () => {
           Don't have an account?<NavLink to="/singup"> Create a free account</NavLink>{" "}
         </p>
         <hr />
-        <div className={`${style.btn}`}>
-          <button>
+        <div className={`${style.googleBtn}`}>
+          <button onClick={handelLoginGoogle}>
             <FaGoogle /> Sign up with google
           </button>
         </div>
-        <div className={`${style.btn}`}>
-          <button>
+        <div className={`${style.gitBtn}`}>
+          <button onClick={handelLoginGithub}>
             <FaGithub /> Sign up with Github
           </button>
         </div>

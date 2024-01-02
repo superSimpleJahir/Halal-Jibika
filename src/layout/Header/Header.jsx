@@ -1,6 +1,20 @@
 import { NavLink } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useSignOut } from "react-firebase-hooks/auth";
+
 import style from "../../style/Header.module.css";
+import auth from "../../firebase/firebase.config";
+import { useEffect } from "react";
+
 const Header = () => {
+  const [user] = useAuthState(auth);
+
+  const [signOut, loading, error] = useSignOut(auth);
+
+  const handleLogOut = () => {
+    signOut();
+  };
+
   return (
     <section className={`${style.innerNavSection}`}>
       <nav className={`flex container ${style.nav}`}>
@@ -10,51 +24,37 @@ const Header = () => {
 
         <ul className={`${style.flex} flex`}>
           <li>
-            <NavLink to="/">
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about">
-              About
-            </NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <NavLink to="/jobs" >
-              Jobs
-            </NavLink>
+            <NavLink to="/jobs">Jobs</NavLink>
           </li>
           <li>
-            <NavLink to="/contact" >
-              Contact
-            </NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <li>
-            <NavLink to="/favorite" >
-              Favorite
-            </NavLink>
+            <NavLink to="/favorite">Favorite</NavLink>
           </li>
-          <NavLink to="/login" >
+          {/* <NavLink to="/login">
             <li className={`${style.login} ${style.btn}`}>Login</li>
-          </NavLink>
-        </ul>
+          </NavLink> */}
 
-        {/* <ul className={`${style.flex} flex`}>
-          
-          <NavLink to="/signup">
-            <li className={`${style.signup} ${style.btn}`}>SignUp</li>
-          </NavLink>
-        </ul> */}
+          {user ? (
+            <button onClick={handleLogOut}>
+              <li className={`${style.signup} ${style.btn}`}>LogOut</li>
+            </button>
+          ) : (
+            <NavLink to="/login">
+              <li className={`${style.login} ${style.btn}`}>Login</li>
+            </NavLink>
+          )}
+        </ul>
       </nav>
     </section>
   );
 };
 
 export default Header;
-// className={({ isActive, isPending }) =>
-//                       isActive
-//                         ? "active"
-//                         : isPending
-//                         ? "pending"
-//                         : ""
-//                     }

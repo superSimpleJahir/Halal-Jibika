@@ -1,10 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import style from "../../../style/Login.module.css";
 import { useState } from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../firebase/firebase.config";
+
 const SingUp = () => {
   const [userData, setUserData] = useState({ name: "", email: "", password: "", cpassword: "" });
   const { name, email, password, cpassword } = userData;
+
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const naviget = useNavigate();
 
   const handelChang = (event) => {
     setUserData({
@@ -12,10 +20,13 @@ const SingUp = () => {
       [event.target.name]: event.target.value,
     });
   };
+
   const handelSubmit = (event) => {
     event.preventDefault();
-    console.log(userData);
+    createUserWithEmailAndPassword(email, password);
+    naviget("/");
   };
+
   return (
     <div>
       <div className={`${style.innerLogin} container`}>
