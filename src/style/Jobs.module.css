@@ -40,6 +40,12 @@
   max-width: 150px;
 }
 
+.edit,
+.delete {
+  display: flex;
+  align-items: center;
+}
+
 .loveBtn {
   cursor: pointer;
   border: none;

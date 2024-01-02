@@ -2,13 +2,15 @@
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 // import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import style from "../style/Jobs.module.css";
 
 const Job = ({ jobData }) => {
-  const {id, way, logo, title, salary, position, location } = jobData;
+  const { id, way, logo, title, salary, position, location } = jobData;
 
   return (
     <div className={style.innerJobcart}>
@@ -39,6 +41,12 @@ const Job = ({ jobData }) => {
         <Link to={`/jobdetails/${id}`} className={`${style.btn} ${style.details}`}>
           Details
         </Link>
+        <button className={`${style.btn} ${style.edit}`}>
+          <FaRegEdit />
+        </button>
+        <button className={`${style.btn} ${style.delete}`}>
+          <MdDelete />
+        </button>
       </div>
     </div>
   );
