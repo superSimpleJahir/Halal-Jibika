@@ -5,16 +5,21 @@
   height: 100vh;
 }
 
-.innerLogin form {
+.innerform {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   width: 400px;
   padding: 20px;
   border-radius: 10px;
 }
-.innerLogin form h1{
+
+.innerLogin form {}
+
+.innerLogin form h1 {
   font-weight: 600;
+  margin-bottom: 10px;
 }
-.innerLogin form p{
+
+.innerLogin p {
   margin: 10px 0;
   font-size: 18px;
 }
@@ -32,9 +37,15 @@
   outline: .5px solid #076CBE;
 }
 
-.innerLogin .btn input{
+.innerLogin .btn input {
   cursor: pointer;
-background-color: #076CBE;
-color: #fff;
-font-weight: 700
+  background-color: #fff;
+  color: #076CBE;
+  font-weight: 700;
+  transition: all ease .5s;
+}
+
+.innerLogin .btn input:hover {
+  background-color: #076CBE;
+  color: #fff;
 }
