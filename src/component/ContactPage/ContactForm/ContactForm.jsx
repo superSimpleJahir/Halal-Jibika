@@ -1,5 +1,5 @@
 import Style from "./ContactForm.module.css";
-import contact from "../../../../public/img/Forms.gif";
+import contact from "../../../../public/img/contactimage.svg";
 
 const ContactForm = () => {
   return (

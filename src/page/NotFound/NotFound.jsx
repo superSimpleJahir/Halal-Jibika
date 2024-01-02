@@ -1,8 +1,26 @@
-
+import { Link } from "react-router-dom";
+import style from './notfound.module.css'
 const NotFound = () => {
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur atque rem praesentium quam iste! Deleniti libero animi sint corrupti! Officia ullam fugiat quidem laboriosam expedita beatae natus cumque, dolorem voluptatem!
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        gap: "40px",
+        height: "100vh",
+      }}
+      className="container"
+    >
+      <img
+        style={{ width: "600px" }}
+        src="../../../public/img/not_found_re_e9o6.svg"
+        alt="not_found"
+      />
+      <button>
+        <Link className={style.btn} to="/">Back to home</Link>
+      </button>
     </div>
   );
 };

@@ -12,13 +12,15 @@ const Jobs = () => {
   };
 
   useEffect(() => {
-    fratchData("../../../public/Jobs.json");
+    fratchData("http://localhost:9000/jobs");
+    // fratchData("../../../public/Jobs.json");
   }, []);
 
   console.log(data);
 
   return (
     <section className={`${style.jobSection} container`}>
+      <h1>All Jobs</h1>
       <div className={style.innrejobs}>
       {data && data.map((jobData) => <Job key={jobData.id} jobData={jobData} />)}
       </div>
