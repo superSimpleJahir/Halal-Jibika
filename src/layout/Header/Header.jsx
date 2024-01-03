@@ -4,7 +4,6 @@ import { useSignOut } from "react-firebase-hooks/auth";
 
 import style from "../../style/Header.module.css";
 import auth from "../../firebase/firebase.config";
-import { useEffect } from "react";
 
 const Header = () => {
   const [user] = useAuthState(auth);

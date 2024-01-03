@@ -16,7 +16,6 @@ const Jobs = () => {
     // fratchData("../../../public/Jobs.json");
   }, []);
 
-  console.log(data);
 
   return (
     <section className={`${style.jobSection} container`}>

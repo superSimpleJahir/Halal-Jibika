@@ -9,8 +9,7 @@ const SingUp = () => {
   const [userData, setUserData] = useState({ name: "", email: "", password: "", cpassword: "" });
   const { name, email, password, cpassword } = userData;
 
-
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
   const naviget = useNavigate();
 

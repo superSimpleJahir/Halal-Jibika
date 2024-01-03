@@ -3,7 +3,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 
 import style from "../../../style/Login.module.css";
 import auth from "../../../firebase/firebase.config";
@@ -11,8 +15,9 @@ import auth from "../../../firebase/firebase.config";
 const Login = () => {
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
   const { email, password } = inputValue;
+  
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle ] = useSignInWithGoogle(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [signInWithGithub] = useSignInWithGithub(auth);
 
   const navigate = useNavigate();
@@ -38,7 +43,7 @@ const Login = () => {
 
   // Git auth
   const handelLoginGithub = () => {
-    signInWithGithub()
+    signInWithGithub();
     navigate("/");
   };
 

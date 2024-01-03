@@ -59,21 +59,10 @@
 
 }
 
-.love:hover {
-  /* background-color: red; */
-  color: red;
-}
-
 .love1 {
   font-size: 20px;
-  /* color: red; */
-}
-
-.love1:hover {
-  font-size: 20px;
   color: red;
 }
-
 
 .workSite {
   color: #5c66d9;
