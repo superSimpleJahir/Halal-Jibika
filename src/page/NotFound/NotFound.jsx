@@ -15,7 +15,7 @@ const NotFound = () => {
     >
       <img
         style={{ width: "600px" }}
-        src="../../../public/img/not_found_re_e9o6.svg"
+        src="./img/not_found_re_e9o6.svg"
         alt="not_found"
       />
       <button>

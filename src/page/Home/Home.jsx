@@ -18,7 +18,7 @@ const Home = () => {
 
   useEffect(() => {
     // fratchData("http://localhost:9000/jobs");
-    fratchData("../../../public/Jobs.json");
+    fratchData("./Jobs.json");
   }, []);
   const latestData = data.reverse().slice(0,6)
 
@@ -41,7 +41,7 @@ const Home = () => {
               </NavLink>
             </div>
             <div className={style.herologo}>
-              <img src="../../../public/img/image .png" alt="" />
+              <img src="./img/image .png" alt="" />
             </div>
           </div>
         </section>

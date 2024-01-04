@@ -19,7 +19,7 @@ const JobDetails = () => {
         <h1>
           Job Details <br /> Apply your <br /> Dream Jobs
         </h1>
-        <img src="../../public/img/resume assessment.svg" alt="jobHeroLogo" />
+        <img src="./img/resume assessment.svg" alt="jobHeroLogo" />
       </div>
 
       <div className="">

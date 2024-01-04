@@ -45,7 +45,7 @@ const routes = createBrowserRouter([
         path: "/jobdetails/:id",
         element: <JobDetails/>,
         // loader: ()=>(fetch(`http://localhost:9000/jobs`)
-        loader: ()=>(fetch(`../../public/Jobs.json`)
+        loader: ()=>(fetch(`./Jobs.json`)
         )
       },
 
