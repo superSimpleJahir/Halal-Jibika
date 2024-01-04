@@ -2,7 +2,7 @@
 const Favorite = () => {
   return (
     <div>
-      
+      he
     </div>
   );
 };

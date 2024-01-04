@@ -11,12 +11,13 @@ import {
 
 import style from "../../../style/Login.module.css";
 import auth from "../../../firebase/firebase.config";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
   const { email, password } = inputValue;
-  
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+
+  const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [signInWithGithub] = useSignInWithGithub(auth);
 
@@ -32,18 +33,25 @@ const Login = () => {
   const handelSubmit = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
-    navigate("/");
+    if (user) {
+      toast.success("singUp successfull");
+      navigate("/");
+    } else {
+      toast.error("Don't have an account");
+    }
   };
 
   // Google auth
-  const handelLoginGoogle = () => {
-    signInWithGoogle();
+  const handelLoginGoogle = async () => {
+    await signInWithGoogle();
+    toast.success("singUp successfull");
     navigate("/");
   };
 
   // Git auth
-  const handelLoginGithub = () => {
-    signInWithGithub();
+  const handelLoginGithub = async () => {
+    await signInWithGithub();
+    toast.success("singUp successfull");
     navigate("/");
   };
 

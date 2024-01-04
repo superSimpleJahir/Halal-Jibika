@@ -4,12 +4,14 @@ import style from "../../../style/Login.module.css";
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase/firebase.config";
+import Loading from "../../Loading/Loading";
+import { toast } from "react-toastify";
 
 const SingUp = () => {
   const [userData, setUserData] = useState({ name: "", email: "", password: "", cpassword: "" });
   const { name, email, password, cpassword } = userData;
 
-  const [createUserWithEmailAndPassword] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const naviget = useNavigate();
 
@@ -20,12 +22,17 @@ const SingUp = () => {
     });
   };
 
-  const handelSubmit = (event) => {
+  const handelSubmit = async (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    toast.success("Login successfull");
     naviget("/");
   };
-
+  if (loading) {
+    return <Loading />;
+  }
+  console.log(user);
+  console.log(error);
   return (
     <div>
       <div className={`${style.innerLogin} container`}>

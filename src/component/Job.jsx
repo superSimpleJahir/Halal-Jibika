@@ -8,25 +8,25 @@ import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import style from "../style/Jobs.module.css";
-import { useEffect, useState } from "react";
-import { getStoredJobApplication } from "./Utility/LocalStore";
+import { useState } from "react";
 
 const Job = ({ jobData }) => {
   const { id, way, logo, title, salary, position, location } = jobData;
-  const [favroite, setFavroite] = useState(true);
-
-  const handleFavroite = (id) => {
-    setFavroite(!favroite);
-    console.log(id)
+  const [favoriteJobs, setFavoriteJobs] = useState(true);
+  const handleFavroite = () => {
+    setFavoriteJobs(!favoriteJobs);
   };
-
 
   return (
     <div className={style.innerJobcart}>
       <div className={style.jobCart}>
         <img className={style.companyLogo} src={logo} alt="" />
-        <button className={style.loveBtn} onClick={()=> handleFavroite(id)}>
-          {favroite ? <FaRegHeart className={style.love} /> : <FaHeart className={style.love1} />}
+        <button className={style.loveBtn} onClick={() => handleFavroite()}>
+          {favoriteJobs ? (
+            <FaRegHeart className={style.love} />
+          ) : (
+            <FaHeart className={style.love1} />
+          )}
         </button>
       </div>
 

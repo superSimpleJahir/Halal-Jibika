@@ -4,6 +4,7 @@ import { useSignOut } from "react-firebase-hooks/auth";
 
 import style from "../../style/Header.module.css";
 import auth from "../../firebase/firebase.config";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -11,8 +12,10 @@ const Header = () => {
   const [signOut, loading, error] = useSignOut(auth);
 
   const handleLogOut = () => {
+    toast.success("Logout successfull");
     signOut();
   };
+  console.log(user);
 
   return (
     <section className={`${style.innerNavSection}`}>
@@ -37,9 +40,11 @@ const Header = () => {
           <li>
             <NavLink to="/favorite">Favorite</NavLink>
           </li>
-          {/* <NavLink to="/login">
-            <li className={`${style.login} ${style.btn}`}>Login</li>
-          </NavLink> */}
+          {!user && (
+            <NavLink to="/singup">
+              <li className={`${style.login} ${style.btn}`}>SingUp</li>
+            </NavLink>
+          )}
 
           {user ? (
             <button onClick={handleLogOut}>

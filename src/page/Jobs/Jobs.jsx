@@ -16,12 +16,11 @@ const Jobs = () => {
     // fratchData("../../../public/Jobs.json");
   }, []);
 
-
   return (
     <section className={`${style.jobSection} container`}>
       <h1>All Jobs</h1>
       <div className={style.innrejobs}>
-      {data && data.map((jobData) => <Job key={jobData.id} jobData={jobData} />)}
+        {data && data.map((jobData) => <Job key={jobData.id} jobData={jobData} />)}
       </div>
     </section>
   );
