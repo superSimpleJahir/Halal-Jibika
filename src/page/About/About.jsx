@@ -33,7 +33,7 @@ const About = () => {
           </div>
 
           <div className={style.aboutImage}>
-            <img src="../../../public/img/img-01.jpg" alt="" />
+            <img src="../../../public/img/img-01.jpg" alt="logo" />
           </div>
         </div>
       </div>
