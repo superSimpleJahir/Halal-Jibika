@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import style from "./about.module.css";
+import style from "./a.module.css";
 const About = () => {
   return (
     <section className={style.aboutSection}>
