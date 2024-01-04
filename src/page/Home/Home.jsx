@@ -17,10 +17,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fratchData("http://localhost:9000/jobs");
-    // fratchData("../../../public/Jobs.json");
+    // fratchData("http://localhost:9000/jobs");
+    fratchData("../../../public/Jobs.json");
   }, []);
-  const latestData = data.reverse().slice(0,8)
+  const latestData = data.reverse().slice(0,6)
 
   return (
     <>

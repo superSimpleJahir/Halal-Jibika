@@ -44,16 +44,11 @@ const routes = createBrowserRouter([
       {
         path: "/jobdetails/:id",
         element: <JobDetails/>,
-        loader: ()=>(fetch(`http://localhost:9000/jobs`)
-        // loader: ()=>(fetch(`../../public/Jobs.json`)
+        // loader: ()=>(fetch(`http://localhost:9000/jobs`)
+        loader: ()=>(fetch(`../../public/Jobs.json`)
         )
       },
-      // {
-      //   path: "users/:userId",
-      //   element: <Singale />,
-      //   loader: async ({ params }) =>
-      //     await fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
-      // },
+
     ],
   },
   {

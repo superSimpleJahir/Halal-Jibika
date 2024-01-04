@@ -12,8 +12,8 @@ const Jobs = () => {
   };
 
   useEffect(() => {
-    fratchData("http://localhost:9000/jobs");
-    // fratchData("../../../public/Jobs.json");
+    // fratchData("http://localhost:9000/jobs");
+    fratchData("../../../public/Jobs.json");
   }, []);
 
   return (
